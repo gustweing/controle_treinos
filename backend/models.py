@@ -10,6 +10,8 @@ class ProductModel(Base):
     __tablename__ = "treino"
     id:Integer = Column(Integer, primary_key=True)
     user_treino:String = Column(String)
+    peso_user: Float = Column(Float)
+    fez_dieta: bool = Column(Boolean)
     tipo_treino:String = Column(String)
     exercicio_treino:String = Column(String)
     rpe:float = Column(Float)
@@ -17,16 +19,5 @@ class ProductModel(Base):
     num_repeticoes:int = Column(Integer)
     num_kgs:float = Column(Float)
     data_treino: DateTime = Column(DateTime)
-    created_at:DateTime = Column(DateTime(timezone=True), 
-                                 default=func.now())
-
-class ProdutcUser(Base):
-    __tablename__ = "user_infos"
-    id_user:Integer = Column(Integer, primary_key=True)
-    nome_user:String = Column(String)
-    peso_user:Float = Column(Float)
-    fez_dieta:bool = Column(Boolean)
-    treino_dia:bool = Column(Boolean)
-    data_cadastro:DateTime = Column(DateTime)
     created_at:DateTime = Column(DateTime(timezone=True), 
                                  default=func.now())
